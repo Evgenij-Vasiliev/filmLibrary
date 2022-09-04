@@ -3,13 +3,13 @@ const lastMovieTitle = prompt("Какой фильм вы посмотрели �
 const rating = prompt("Во сколько баллов(до 10) оцениваете фильм?");
 const personalMovieDB = {
     count: numberOfFilms,
-    movies: {
-        title: lastMovieTitle,
-        score: rating,
-    },
+    movies: {},
     genres: [],
     privat: false,
 };
+
+personalMovieDB.movies.title = lastMovieTitle;
+personalMovieDB.movies.score = rating;
 
 console.log(`Количество просмотренных фильмов: ${numberOfFilms}`);
 console.log(`Последний просмотренный фильм: ${lastMovieTitle}`);
