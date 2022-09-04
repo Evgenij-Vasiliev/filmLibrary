@@ -8,8 +8,7 @@ const personalMovieDB = {
     privat: false,
 };
 
-personalMovieDB.movies.title = lastMovieTitle;
-personalMovieDB.movies.score = rating;
+personalMovieDB.movies[lastMovieTitle] = rating;
 
 console.log(`Количество просмотренных фильмов: ${numberOfFilms}`);
 console.log(`Последний просмотренный фильм: ${lastMovieTitle}`);
