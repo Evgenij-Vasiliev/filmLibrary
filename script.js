@@ -1,14 +1,6 @@
-"use strict";
+'use strict';
 
-<<<<<<< Updated upstream
-const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-=======
-const a = prompt('Один из последних просмотренных фильмов?', '');
-const b = +prompt('Во сколько баллов(до 10) оцениваете фильм?', '');
-
-const a2= prompt('Один из последних просмотренных фильмов??', '');
-const b2= +prompt('Во сколько баллов(до 10) оцениваете фильм?', '');
->>>>>>> Stashed changes
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -18,27 +10,28 @@ const personalMovieDB = {
     privat: false,
 };
 
-<<<<<<< Updated upstream
+
 for (let i = 0; i < 2; i++) {
-    const a = prompt("Один из последних просмотренных фильмов?", ""),
-        b = +prompt("На сколько оцениваете его?", "");
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = +prompt('На сколько оцениваете его?', '');
     if (a !== null && b !== null && a !== "" && b !== "" && a.length < 50) {
         personalMovieDB.movies[a] = b;
-        console.log("done");
+        console.log('done');
     } else {
         console.log('error');
         i--;
     }
+        
 }
 
-=======
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[a2] = b2;
+if ( personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else  if ( personalMovieDB.count >=10 && personalMovieDB.count < 30) {
+    console.log('Вы классический зритель');
+} else if (personalMovieDB >= 30) {
+    console.log('Вы киноман');
+} else {
+    console.log('Произошла ошибка');
+}
 
-console.log(`Количество просмотренных фильмов: ${numberOfFilms}`);
-console.log(`Один из последних просмотренных фильмов: ${a}`);
-console.log(`Оценка: ${b}`);
-console.log(`Один из последних просмотренных фильмов: ${a2}`);
-console.log(`Оценка: ${b2}`);
->>>>>>> Stashed changes
 console.log(personalMovieDB);
