@@ -46,16 +46,24 @@ const personalMovieDB = {
     }
   },
   toggleVisibleMyDB: () => {
-    personalMovieDB.privat 
-    ? (personalMovieDB.privat = false)
-    : (personalMovieDB.privat = true)
+    personalMovieDB.privat
+      ? (personalMovieDB.privat = false)
+      : (personalMovieDB.privat = true);
   },
   writeYourGenres: () => {
-    for (let i = 1; i <= 3; i++) {
-      personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+    for (let i = 1; i < 2; i++) {
+      const genres = prompt('Введите Ваши любимые жанры через запятую').toLowerCase();
+      if (genres === '' || genres === null) {
+        console.log('Вы ввели некорректные данные или не ввели их вовсе');
+        i--;
+      } else {
+        personalMovieDB.genres= genres.split(', ');
+        personalMovieDB.genres.sort();
+      }      
     }
-  }
+    personalMovieDB.genres.forEach((item, i) => {
+        console.log(`Любимый жанр ${i + 1} - это ${item}`)
+    })
+  },
 };
-
-
 
